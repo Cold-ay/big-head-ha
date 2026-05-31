@@ -17,6 +17,8 @@
 		111111111111111111111108 /* StatementCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111210 /* StatementCycle.swift */; };
 		111111111111111111111109 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111211 /* Transaction.swift */; };
 		111111111111111111111110 /* SpendingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111212 /* SpendingCategory.swift */; };
+		111111111111111111111111 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111213 /* CurrencyConverterTests.swift */; };
+		111111111111111111111112 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111214 /* CurrencyConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		111111111111111111111210 /* StatementCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCycle.swift; sourceTree = "<group>"; };
 		111111111111111111111211 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		111111111111111111111212 /* SpendingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCategory.swift; sourceTree = "<group>"; };
+		111111111111111111111213 /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
+		111111111111111111111214 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				111111111111111111111206 /* AppConstants.swift */,
+				111111111111111111111214 /* CurrencyConverter.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			children = (
 				111111111111111111111203 /* CreditCardRecordTests.swift */,
 				111111111111111111111208 /* ModelTests.swift */,
+				111111111111111111111213 /* CurrencyConverterTests.swift */,
 			);
 			path = CreditCardRecordTests;
 			sourceTree = "<group>";
@@ -228,6 +234,7 @@
 				111111111111111111111108 /* StatementCycle.swift in Sources */,
 				111111111111111111111109 /* Transaction.swift in Sources */,
 				111111111111111111111110 /* SpendingCategory.swift in Sources */,
+				111111111111111111111112 /* CurrencyConverter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,6 +244,7 @@
 			files = (
 				111111111111111111111103 /* CreditCardRecordTests.swift in Sources */,
 				111111111111111111111106 /* ModelTests.swift in Sources */,
+				111111111111111111111111 /* CurrencyConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
