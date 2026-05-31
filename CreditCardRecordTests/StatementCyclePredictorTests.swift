@@ -30,7 +30,7 @@ final class StatementCyclePredictorTests: XCTestCase {
             calendar: calendar
         )
 
-        XCTAssertEqual(calendar.component(.day, from: cycle.dueDate), 7)
-        XCTAssertEqual(calendar.component(.month, from: cycle.dueDate), 7)
+        XCTAssertEqual(calendar.component(.day, from: cycle.dueDate), 6)
+        XCTAssertEqual(calendar.component(.month, from: cycle.dueDate), 8)
     }
 }

@@ -18,7 +18,7 @@ enum StatementCyclePredictor {
         case .fixedDayOfMonth:
             dueDate = dateBySetting(day: dueDayOrOffset, monthsAfter: 1, from: nextStatement, calendar: calendar)
         case .daysAfterStatement:
-            dueDate = calendar.date(byAdding: .day, value: dueDayOrOffset, to: previousStatementDate)!
+            dueDate = calendar.date(byAdding: .day, value: dueDayOrOffset, to: nextStatement)!
         }
 
         return PredictedCycle(startDate: startDate, endDate: endDate, statementDate: nextStatement, dueDate: dueDate)
