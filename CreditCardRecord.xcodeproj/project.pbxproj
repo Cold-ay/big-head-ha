@@ -12,6 +12,11 @@
 		111111111111111111111103 /* CreditCardRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111203 /* CreditCardRecordTests.swift */; };
 		111111111111111111111104 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111206 /* AppConstants.swift */; };
 		111111111111111111111105 /* BootstrapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111207 /* BootstrapModel.swift */; };
+		111111111111111111111106 /* ModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111208 /* ModelTests.swift */; };
+		111111111111111111111107 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111209 /* CreditCard.swift */; };
+		111111111111111111111108 /* StatementCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111210 /* StatementCycle.swift */; };
+		111111111111111111111109 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111211 /* Transaction.swift */; };
+		111111111111111111111110 /* SpendingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111212 /* SpendingCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +37,11 @@
 		111111111111111111111205 /* CreditCardRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCardRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111111111111111111111206 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		111111111111111111111207 /* BootstrapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapModel.swift; sourceTree = "<group>"; };
+		111111111111111111111208 /* ModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelTests.swift; sourceTree = "<group>"; };
+		111111111111111111111209 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
+		111111111111111111111210 /* StatementCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCycle.swift; sourceTree = "<group>"; };
+		111111111111111111111211 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		111111111111111111111212 /* SpendingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				111111111111111111111207 /* BootstrapModel.swift */,
+				111111111111111111111209 /* CreditCard.swift */,
+				111111111111111111111210 /* StatementCycle.swift */,
+				111111111111111111111211 /* Transaction.swift */,
+				111111111111111111111212 /* SpendingCategory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -92,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				111111111111111111111203 /* CreditCardRecordTests.swift */,
+				111111111111111111111208 /* ModelTests.swift */,
 			);
 			path = CreditCardRecordTests;
 			sourceTree = "<group>";
@@ -209,6 +224,10 @@
 				111111111111111111111102 /* ContentView.swift in Sources */,
 				111111111111111111111104 /* AppConstants.swift in Sources */,
 				111111111111111111111105 /* BootstrapModel.swift in Sources */,
+				111111111111111111111107 /* CreditCard.swift in Sources */,
+				111111111111111111111108 /* StatementCycle.swift in Sources */,
+				111111111111111111111109 /* Transaction.swift in Sources */,
+				111111111111111111111110 /* SpendingCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				111111111111111111111103 /* CreditCardRecordTests.swift in Sources */,
+				111111111111111111111106 /* ModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
