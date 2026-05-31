@@ -11,6 +11,7 @@
 		111111111111111111111102 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111202 /* ContentView.swift */; };
 		111111111111111111111103 /* CreditCardRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111203 /* CreditCardRecordTests.swift */; };
 		111111111111111111111104 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111206 /* AppConstants.swift */; };
+		111111111111111111111105 /* BootstrapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111207 /* BootstrapModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,7 @@
 		111111111111111111111204 /* CreditCardRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditCardRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		111111111111111111111205 /* CreditCardRecordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCardRecordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		111111111111111111111206 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		111111111111111111111207 /* BootstrapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				111111111111111111111201 /* CreditCardRecordApp.swift */,
 				111111111111111111111202 /* ContentView.swift */,
 				111111111111111111111605 /* Core */,
+				111111111111111111111606 /* Models */,
 			);
 			path = CreditCardRecord;
 			sourceTree = "<group>";
@@ -75,6 +78,14 @@
 				111111111111111111111206 /* AppConstants.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		111111111111111111111606 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111207 /* BootstrapModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		111111111111111111111603 /* CreditCardRecordTests */ = {
@@ -197,6 +208,7 @@
 				111111111111111111111101 /* CreditCardRecordApp.swift in Sources */,
 				111111111111111111111102 /* ContentView.swift in Sources */,
 				111111111111111111111104 /* AppConstants.swift in Sources */,
+				111111111111111111111105 /* BootstrapModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

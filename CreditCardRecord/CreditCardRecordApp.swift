@@ -7,5 +7,6 @@ struct CreditCardRecordApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: BootstrapModel.self)
     }
 }
