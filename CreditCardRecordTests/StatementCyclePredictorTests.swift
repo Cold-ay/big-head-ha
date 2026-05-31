@@ -13,10 +13,10 @@ final class StatementCyclePredictorTests: XCTestCase {
             calendar: calendar
         )
 
-        XCTAssertEqual(calendar.component(.day, from: cycle.statementDate), 12)
-        XCTAssertEqual(calendar.component(.month, from: cycle.statementDate), 7)
-        XCTAssertEqual(calendar.component(.day, from: cycle.dueDate), 5)
-        XCTAssertEqual(calendar.component(.month, from: cycle.dueDate), 8)
+        XCTAssertEqual(cycle.startDate, date(year: 2026, month: 6, day: 13, calendar: calendar))
+        XCTAssertEqual(cycle.endDate, date(year: 2026, month: 7, day: 12, calendar: calendar))
+        XCTAssertEqual(cycle.statementDate, date(year: 2026, month: 7, day: 12, calendar: calendar))
+        XCTAssertEqual(cycle.dueDate, date(year: 2026, month: 8, day: 5, calendar: calendar))
     }
 
     func testPredictsOffsetDueDate() {
@@ -30,7 +30,46 @@ final class StatementCyclePredictorTests: XCTestCase {
             calendar: calendar
         )
 
-        XCTAssertEqual(calendar.component(.day, from: cycle.dueDate), 6)
-        XCTAssertEqual(calendar.component(.month, from: cycle.dueDate), 8)
+        XCTAssertEqual(cycle.startDate, date(year: 2026, month: 6, day: 13, calendar: calendar))
+        XCTAssertEqual(cycle.endDate, date(year: 2026, month: 7, day: 12, calendar: calendar))
+        XCTAssertEqual(cycle.statementDate, date(year: 2026, month: 7, day: 12, calendar: calendar))
+        XCTAssertEqual(cycle.dueDate, date(year: 2026, month: 8, day: 6, calendar: calendar))
+    }
+
+    func testClampsStatementDayAtMonthBoundary() {
+        let calendar = Calendar(identifier: .gregorian)
+        let firstStatement = date(year: 2026, month: 1, day: 31, calendar: calendar)
+        let cycle = StatementCyclePredictor.predictNextCycle(
+            previousStatementDate: firstStatement,
+            statementDay: 31,
+            dueRuleKind: .fixedDayOfMonth,
+            dueDayOrOffset: 31,
+            calendar: calendar
+        )
+
+        XCTAssertEqual(cycle.startDate, date(year: 2026, month: 2, day: 1, calendar: calendar))
+        XCTAssertEqual(cycle.endDate, date(year: 2026, month: 2, day: 28, calendar: calendar))
+        XCTAssertEqual(cycle.statementDate, date(year: 2026, month: 2, day: 28, calendar: calendar))
+        XCTAssertEqual(cycle.dueDate, date(year: 2026, month: 3, day: 31, calendar: calendar))
+    }
+
+    func testDefaultCalendarUsesGregorianCycle() {
+        let calendar = Calendar(identifier: .gregorian)
+        let firstStatement = date(year: 2026, month: 1, day: 31, calendar: calendar)
+        let cycle = StatementCyclePredictor.predictNextCycle(
+            previousStatementDate: firstStatement,
+            statementDay: 31,
+            dueRuleKind: .fixedDayOfMonth,
+            dueDayOrOffset: 31
+        )
+
+        XCTAssertEqual(cycle.startDate, date(year: 2026, month: 2, day: 1, calendar: calendar))
+        XCTAssertEqual(cycle.endDate, date(year: 2026, month: 2, day: 28, calendar: calendar))
+        XCTAssertEqual(cycle.statementDate, date(year: 2026, month: 2, day: 28, calendar: calendar))
+        XCTAssertEqual(cycle.dueDate, date(year: 2026, month: 3, day: 31, calendar: calendar))
+    }
+
+    private func date(year: Int, month: Int, day: Int, calendar: Calendar) -> Date {
+        calendar.date(from: DateComponents(year: year, month: month, day: day))!
     }
 }

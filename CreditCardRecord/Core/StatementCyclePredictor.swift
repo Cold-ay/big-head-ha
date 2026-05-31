@@ -8,7 +8,7 @@ struct PredictedCycle: Equatable {
 }
 
 enum StatementCyclePredictor {
-    static func predictNextCycle(previousStatementDate: Date, statementDay: Int, dueRuleKind: DueRuleKind, dueDayOrOffset: Int, calendar: Calendar = .current) -> PredictedCycle {
+    static func predictNextCycle(previousStatementDate: Date, statementDay: Int, dueRuleKind: DueRuleKind, dueDayOrOffset: Int, calendar: Calendar = Calendar(identifier: .gregorian)) -> PredictedCycle {
         let nextStatement = dateBySetting(day: statementDay, monthsAfter: 1, from: previousStatementDate, calendar: calendar)
         let startDate = calendar.date(byAdding: .day, value: 1, to: previousStatementDate)!
         let endDate = nextStatement
