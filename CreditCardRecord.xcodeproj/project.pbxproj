@@ -19,6 +19,8 @@
 		111111111111111111111110 /* SpendingCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111212 /* SpendingCategory.swift */; };
 		111111111111111111111111 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111213 /* CurrencyConverterTests.swift */; };
 		111111111111111111111112 /* CurrencyConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111214 /* CurrencyConverter.swift */; };
+		111111111111111111111113 /* StatementCyclePredictorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111215 /* StatementCyclePredictorTests.swift */; };
+		111111111111111111111114 /* StatementCyclePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111216 /* StatementCyclePredictor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		111111111111111111111212 /* SpendingCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingCategory.swift; sourceTree = "<group>"; };
 		111111111111111111111213 /* CurrencyConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterTests.swift; sourceTree = "<group>"; };
 		111111111111111111111214 /* CurrencyConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverter.swift; sourceTree = "<group>"; };
+		111111111111111111111215 /* StatementCyclePredictorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCyclePredictorTests.swift; sourceTree = "<group>"; };
+		111111111111111111111216 /* StatementCyclePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementCyclePredictor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 			children = (
 				111111111111111111111206 /* AppConstants.swift */,
 				111111111111111111111214 /* CurrencyConverter.swift */,
+				111111111111111111111216 /* StatementCyclePredictor.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 				111111111111111111111203 /* CreditCardRecordTests.swift */,
 				111111111111111111111208 /* ModelTests.swift */,
 				111111111111111111111213 /* CurrencyConverterTests.swift */,
+				111111111111111111111215 /* StatementCyclePredictorTests.swift */,
 			);
 			path = CreditCardRecordTests;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 				111111111111111111111109 /* Transaction.swift in Sources */,
 				111111111111111111111110 /* SpendingCategory.swift in Sources */,
 				111111111111111111111112 /* CurrencyConverter.swift in Sources */,
+				111111111111111111111114 /* StatementCyclePredictor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +252,7 @@
 				111111111111111111111103 /* CreditCardRecordTests.swift in Sources */,
 				111111111111111111111106 /* ModelTests.swift in Sources */,
 				111111111111111111111111 /* CurrencyConverterTests.swift in Sources */,
+				111111111111111111111113 /* StatementCyclePredictorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
