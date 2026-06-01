@@ -31,6 +31,8 @@
 		111111111111111111111122 /* BackupEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111225 /* BackupEnvelope.swift */; };
 		111111111111111111111123 /* WidgetSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111226 /* WidgetSnapshotTests.swift */; };
 		111111111111111111111124 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111227 /* WidgetSnapshot.swift */; };
+		111111111111111111111125 /* CreditCardRecordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111228 /* CreditCardRecordWidget.swift */; };
+		111111111111111111111126 /* CreditCardRecordWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 111111111111111111111229 /* CreditCardRecordWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 111111111111111111111401;
 			remoteInfo = CreditCardRecord;
+		};
+		111111111111111111111305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 111111111111111111111001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 111111111111111111111404;
+			remoteInfo = CreditCardRecordWidget;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -78,6 +87,11 @@
 		111111111111111111111225 /* BackupEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEnvelope.swift; sourceTree = "<group>"; };
 		111111111111111111111226 /* WidgetSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshotTests.swift; sourceTree = "<group>"; };
 		111111111111111111111227 /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
+		111111111111111111111228 /* CreditCardRecordWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRecordWidget.swift; sourceTree = "<group>"; };
+		111111111111111111111229 /* CreditCardRecordWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CreditCardRecordWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		111111111111111111111230 /* CreditCardRecord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditCardRecord.entitlements; sourceTree = "<group>"; };
+		111111111111111111111231 /* CreditCardRecordWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditCardRecordWidget.entitlements; sourceTree = "<group>"; };
+		111111111111111111111232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +116,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		111111111111111111111504 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,6 +132,7 @@
 				111111111111111111111602 /* CreditCardRecord */,
 				111111111111111111111603 /* CreditCardRecordTests */,
 				111111111111111111111607 /* CreditCardRecordUITests */,
+				111111111111111111111611 /* CreditCardRecordWidget */,
 				111111111111111111111604 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +142,7 @@
 			children = (
 				111111111111111111111201 /* CreditCardRecordApp.swift */,
 				111111111111111111111202 /* ContentView.swift */,
+				111111111111111111111230 /* CreditCardRecord.entitlements */,
 				111111111111111111111605 /* Core */,
 				111111111111111111111608 /* Features */,
 				111111111111111111111606 /* Models */,
@@ -200,12 +223,23 @@
 			path = Repayment;
 			sourceTree = "<group>";
 		};
+		111111111111111111111611 /* CreditCardRecordWidget */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111228 /* CreditCardRecordWidget.swift */,
+				111111111111111111111232 /* Info.plist */,
+				111111111111111111111231 /* CreditCardRecordWidget.entitlements */,
+			);
+			path = CreditCardRecordWidget;
+			sourceTree = "<group>";
+		};
 		111111111111111111111604 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				111111111111111111111204 /* CreditCardRecord.app */,
 				111111111111111111111205 /* CreditCardRecordTests.xctest */,
 				111111111111111111111220 /* CreditCardRecordUITests.xctest */,
+				111111111111111111111229 /* CreditCardRecordWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,10 +254,12 @@
 				111111111111111111111801 /* Sources */,
 				111111111111111111111501 /* Frameworks */,
 				111111111111111111111901 /* Resources */,
+				111111111111111111111905 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				111111111111111111111306 /* PBXTargetDependency */,
 			);
 			name = CreditCardRecord;
 			productName = CreditCardRecord;
@@ -266,6 +302,23 @@
 			productReference = 111111111111111111111220 /* CreditCardRecordUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		111111111111111111111404 /* CreditCardRecordWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 111111111111111111111705 /* Build configuration list for PBXNativeTarget "CreditCardRecordWidget" */;
+			buildPhases = (
+				111111111111111111111804 /* Sources */,
+				111111111111111111111504 /* Frameworks */,
+				111111111111111111111904 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CreditCardRecordWidget;
+			productName = CreditCardRecordWidget;
+			productReference = 111111111111111111111229 /* CreditCardRecordWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -287,6 +340,9 @@
 						CreatedOnToolsVersion = 26.5;
 						TestTargetID = 111111111111111111111401;
 					};
+					111111111111111111111404 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 				};
 			};
 			buildConfigurationList = 111111111111111111111703 /* Build configuration list for PBXProject "CreditCardRecord" */;
@@ -307,6 +363,7 @@
 				111111111111111111111401 /* CreditCardRecord */,
 				111111111111111111111402 /* CreditCardRecordTests */,
 				111111111111111111111403 /* CreditCardRecordUITests */,
+				111111111111111111111404 /* CreditCardRecordWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -333,7 +390,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		111111111111111111111904 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		111111111111111111111905 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				111111111111111111111126 /* CreditCardRecordWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		111111111111111111111801 /* Sources */ = {
@@ -381,6 +459,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		111111111111111111111804 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111111111111111111111125 /* CreditCardRecordWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -393,6 +479,11 @@
 			isa = PBXTargetDependency;
 			target = 111111111111111111111401 /* CreditCardRecord */;
 			targetProxy = 111111111111111111111303 /* PBXContainerItemProxy */;
+		};
+		111111111111111111111306 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 111111111111111111111404 /* CreditCardRecordWidget */;
+			targetProxy = 111111111111111111111305 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,6 +609,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CreditCardRecord/CreditCardRecord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -545,6 +637,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CreditCardRecord/CreditCardRecord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -662,6 +755,60 @@
 			};
 			name = Release;
 		};
+		111111111111111111112009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CreditCardRecordWidget/CreditCardRecordWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CreditCardRecordWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CreditCardRecordWidget;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.CreditCardRecord.CreditCardRecordWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		111111111111111111112010 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = CreditCardRecordWidget/CreditCardRecordWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CreditCardRecordWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CreditCardRecordWidget;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.local.CreditCardRecord.CreditCardRecordWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -688,6 +835,15 @@
 			buildConfigurations = (
 				111111111111111111112007 /* Debug */,
 				111111111111111111112008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		111111111111111111111705 /* Build configuration list for PBXNativeTarget "CreditCardRecordWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				111111111111111111112009 /* Debug */,
+				111111111111111111112010 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
