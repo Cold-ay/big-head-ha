@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 struct ContentView: View {
@@ -19,4 +20,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .modelContainer(for: [CreditCard.self, TransactionRecord.self, StatementCycle.self, SpendingCategory.self] as [any PersistentModel.Type], inMemory: true)
 }
