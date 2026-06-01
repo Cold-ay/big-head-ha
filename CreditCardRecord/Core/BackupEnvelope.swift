@@ -15,6 +15,7 @@ struct EncryptedBackup: Codable, Equatable {
 enum BackupEnvelopeError: Error, Equatable {
     case invalidPassword
     case unsupportedVersion(Int)
+    case unsupportedKDFIterations(Int)
     case randomGenerationFailed(OSStatus)
     case keyDerivationFailed(Int32)
 }
@@ -22,6 +23,7 @@ enum BackupEnvelopeError: Error, Equatable {
 enum BackupEnvelope {
     static let version = 1
     static let defaultKDFIterations = 210_000
+    static let maxSupportedKDFIterations = 1_000_000
 
     static func encrypt(payload: Data, password: String) throws -> EncryptedBackup {
         try validatePassword(password)
@@ -43,6 +45,7 @@ enum BackupEnvelope {
         guard envelope.version == version else {
             throw BackupEnvelopeError.unsupportedVersion(envelope.version)
         }
+        try validateKDFIterations(envelope.kdfIterations)
 
         let key = try deriveKey(password: password, salt: envelope.salt, iterations: envelope.kdfIterations)
         let nonce = try AES.GCM.Nonce(data: envelope.nonce)
@@ -53,6 +56,12 @@ enum BackupEnvelope {
     private static func validatePassword(_ password: String) throws {
         guard !password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
             throw BackupEnvelopeError.invalidPassword
+        }
+    }
+
+    private static func validateKDFIterations(_ iterations: Int) throws {
+        guard iterations >= defaultKDFIterations, iterations <= maxSupportedKDFIterations else {
+            throw BackupEnvelopeError.unsupportedKDFIterations(iterations)
         }
     }
 

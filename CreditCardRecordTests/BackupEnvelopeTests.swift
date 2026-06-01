@@ -31,17 +31,46 @@ final class BackupEnvelopeTests: XCTestCase {
 
     func testUnsupportedVersionRejected() throws {
         let envelope = try BackupEnvelope.encrypt(payload: Data("secret".utf8), password: "right")
-        let unsupportedEnvelope = EncryptedBackup(
-            version: 2,
-            kdfIterations: envelope.kdfIterations,
-            salt: envelope.salt,
-            nonce: envelope.nonce,
-            ciphertext: envelope.ciphertext,
-            tag: envelope.tag
-        )
+        let unsupportedEnvelope = envelope.with(version: 2)
 
         XCTAssertThrowsError(try BackupEnvelope.decrypt(envelope: unsupportedEnvelope, password: "right")) { error in
             XCTAssertEqual(error as? BackupEnvelopeError, .unsupportedVersion(2))
+        }
+    }
+
+    func testTooLowKDFIterationsRejected() throws {
+        let envelope = try BackupEnvelope.encrypt(payload: Data("secret".utf8), password: "right")
+        let weakEnvelope = envelope.with(kdfIterations: 1)
+
+        XCTAssertThrowsError(try BackupEnvelope.decrypt(envelope: weakEnvelope, password: "right")) { error in
+            XCTAssertEqual(error as? BackupEnvelopeError, .unsupportedKDFIterations(1))
+        }
+    }
+
+    func testZeroKDFIterationsRejected() throws {
+        let envelope = try BackupEnvelope.encrypt(payload: Data("secret".utf8), password: "right")
+        let invalidEnvelope = envelope.with(kdfIterations: 0)
+
+        XCTAssertThrowsError(try BackupEnvelope.decrypt(envelope: invalidEnvelope, password: "right")) { error in
+            XCTAssertEqual(error as? BackupEnvelopeError, .unsupportedKDFIterations(0))
+        }
+    }
+
+    func testNegativeKDFIterationsRejected() throws {
+        let envelope = try BackupEnvelope.encrypt(payload: Data("secret".utf8), password: "right")
+        let invalidEnvelope = envelope.with(kdfIterations: -1)
+
+        XCTAssertThrowsError(try BackupEnvelope.decrypt(envelope: invalidEnvelope, password: "right")) { error in
+            XCTAssertEqual(error as? BackupEnvelopeError, .unsupportedKDFIterations(-1))
+        }
+    }
+
+    func testTooHighKDFIterationsRejected() throws {
+        let envelope = try BackupEnvelope.encrypt(payload: Data("secret".utf8), password: "right")
+        let expensiveEnvelope = envelope.with(kdfIterations: BackupEnvelope.maxSupportedKDFIterations + 1)
+
+        XCTAssertThrowsError(try BackupEnvelope.decrypt(envelope: expensiveEnvelope, password: "right")) { error in
+            XCTAssertEqual(error as? BackupEnvelopeError, .unsupportedKDFIterations(BackupEnvelope.maxSupportedKDFIterations + 1))
         }
     }
 
@@ -53,5 +82,21 @@ final class BackupEnvelopeTests: XCTestCase {
         let second = try BackupEnvelope.encrypt(payload: payload, password: password)
 
         XCTAssertTrue(first.salt != second.salt || first.nonce != second.nonce || first.ciphertext != second.ciphertext)
+    }
+}
+
+private extension EncryptedBackup {
+    func with(
+        version: Int? = nil,
+        kdfIterations: Int? = nil
+    ) -> EncryptedBackup {
+        EncryptedBackup(
+            version: version ?? self.version,
+            kdfIterations: kdfIterations ?? self.kdfIterations,
+            salt: salt,
+            nonce: nonce,
+            ciphertext: ciphertext,
+            tag: tag
+        )
     }
 }
