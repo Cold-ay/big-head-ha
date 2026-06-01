@@ -9,5 +9,7 @@ final class QuickAddUITests: XCTestCase {
         XCTAssertTrue(app.textFields["quickAdd.amount"].exists)
         XCTAssertTrue(app.textFields["quickAdd.merchant"].exists)
         XCTAssertTrue(app.buttons["quickAdd.save"].exists)
+        XCTAssertTrue(app.staticTexts["quickAdd.noCards"].exists)
+        XCTAssertFalse(app.buttons["quickAdd.save"].isEnabled)
     }
 }

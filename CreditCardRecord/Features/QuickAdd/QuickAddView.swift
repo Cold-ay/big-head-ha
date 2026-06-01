@@ -23,6 +23,7 @@ struct QuickAddView: View {
                             Text("Add a card to start quick recording")
                                 .foregroundStyle(.secondary)
                                 .frame(maxWidth: .infinity, minHeight: 120)
+                                .accessibilityIdentifier("quickAdd.noCards")
                         } else {
                             TabView(selection: $selectedCardID) {
                                 ForEach(cards) { card in
