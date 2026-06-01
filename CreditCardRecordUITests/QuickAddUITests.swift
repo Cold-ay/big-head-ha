@@ -3,6 +3,7 @@ import XCTest
 final class QuickAddUITests: XCTestCase {
     func testQuickAddScreenShowsCoreFields() {
         let app = XCUIApplication()
+        app.launchArguments.append("--uitesting")
         app.launch()
 
         XCTAssertTrue(app.staticTexts["Quick Add"].exists)
