@@ -29,6 +29,8 @@
 		111111111111111111111120 /* RepaymentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111223 /* RepaymentUITests.swift */; };
 		111111111111111111111121 /* BackupEnvelopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111224 /* BackupEnvelopeTests.swift */; };
 		111111111111111111111122 /* BackupEnvelope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111225 /* BackupEnvelope.swift */; };
+		111111111111111111111123 /* WidgetSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111226 /* WidgetSnapshotTests.swift */; };
+		111111111111111111111124 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111227 /* WidgetSnapshot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		111111111111111111111223 /* RepaymentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepaymentUITests.swift; sourceTree = "<group>"; };
 		111111111111111111111224 /* BackupEnvelopeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEnvelopeTests.swift; sourceTree = "<group>"; };
 		111111111111111111111225 /* BackupEnvelope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupEnvelope.swift; sourceTree = "<group>"; };
+		111111111111111111111226 /* WidgetSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshotTests.swift; sourceTree = "<group>"; };
+		111111111111111111111227 /* WidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSnapshot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 				111111111111111111111216 /* StatementCyclePredictor.swift */,
 				111111111111111111111218 /* RepaymentCalculator.swift */,
 				111111111111111111111225 /* BackupEnvelope.swift */,
+				111111111111111111111227 /* WidgetSnapshot.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				111111111111111111111215 /* StatementCyclePredictorTests.swift */,
 				111111111111111111111217 /* RepaymentCalculatorTests.swift */,
 				111111111111111111111224 /* BackupEnvelopeTests.swift */,
+				111111111111111111111226 /* WidgetSnapshotTests.swift */,
 			);
 			path = CreditCardRecordTests;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 				111111111111111111111118 /* QuickAddView.swift in Sources */,
 				111111111111111111111119 /* RepaymentView.swift in Sources */,
 				111111111111111111111122 /* BackupEnvelope.swift in Sources */,
+				111111111111111111111124 /* WidgetSnapshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +368,7 @@
 				111111111111111111111113 /* StatementCyclePredictorTests.swift in Sources */,
 				111111111111111111111115 /* RepaymentCalculatorTests.swift in Sources */,
 				111111111111111111111121 /* BackupEnvelopeTests.swift in Sources */,
+				111111111111111111111123 /* WidgetSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
