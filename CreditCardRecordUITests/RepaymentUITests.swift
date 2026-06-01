@@ -8,5 +8,6 @@ final class RepaymentUITests: XCTestCase {
         app.tabBars.buttons["Repayment"].tap()
         XCTAssertTrue(app.navigationBars["Repayment"].exists)
         XCTAssertTrue(app.staticTexts["Next Payment Due"].exists)
+        XCTAssertTrue(app.staticTexts["repayment.noCards"].exists)
     }
 }

@@ -10,6 +10,7 @@ struct RepaymentView: View {
                 Section("Next Payment Due") {
                     if cards.isEmpty {
                         Text("Add a card to start tracking repayment")
+                            .accessibilityIdentifier("repayment.noCards")
                     } else {
                         ForEach(cards) { card in
                             VStack(alignment: .leading, spacing: 4) {
