@@ -33,6 +33,7 @@
 		111111111111111111111124 /* WidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111227 /* WidgetSnapshot.swift */; };
 		111111111111111111111125 /* CreditCardRecordWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111228 /* CreditCardRecordWidget.swift */; };
 		111111111111111111111126 /* CreditCardRecordWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 111111111111111111111229 /* CreditCardRecordWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		111111111111111111111127 /* RecordSpendingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111233 /* RecordSpendingIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		111111111111111111111230 /* CreditCardRecord.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditCardRecord.entitlements; sourceTree = "<group>"; };
 		111111111111111111111231 /* CreditCardRecordWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditCardRecordWidget.entitlements; sourceTree = "<group>"; };
 		111111111111111111111232 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		111111111111111111111233 /* RecordSpendingIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSpendingIntent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				111111111111111111111230 /* CreditCardRecord.entitlements */,
 				111111111111111111111605 /* Core */,
 				111111111111111111111608 /* Features */,
+				111111111111111111111612 /* Intents */,
 				111111111111111111111606 /* Models */,
 			);
 			path = CreditCardRecord;
@@ -231,6 +234,14 @@
 				111111111111111111111231 /* CreditCardRecordWidget.entitlements */,
 			);
 			path = CreditCardRecordWidget;
+			sourceTree = "<group>";
+		};
+		111111111111111111111612 /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				111111111111111111111233 /* RecordSpendingIntent.swift */,
+			);
+			path = Intents;
 			sourceTree = "<group>";
 		};
 		111111111111111111111604 /* Products */ = {
@@ -433,6 +444,7 @@
 				111111111111111111111119 /* RepaymentView.swift in Sources */,
 				111111111111111111111122 /* BackupEnvelope.swift in Sources */,
 				111111111111111111111124 /* WidgetSnapshot.swift in Sources */,
+				111111111111111111111127 /* RecordSpendingIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
