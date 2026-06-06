@@ -8,9 +8,9 @@ struct ContentView: View {
                 .tabItem { Label("Quick", systemImage: "plus.circle") }
             RepaymentView()
                 .tabItem { Label("Repayment", systemImage: "creditcard") }
-            Text("Charts")
+            ChartsView()
                 .tabItem { Label("Charts", systemImage: "chart.pie") }
-            Text("Cards")
+            CardsView()
                 .tabItem { Label("Cards", systemImage: "rectangle.stack") }
             Text("Settings")
                 .tabItem { Label("Settings", systemImage: "gearshape") }

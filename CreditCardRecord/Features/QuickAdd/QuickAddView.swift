@@ -46,6 +46,9 @@ struct QuickAddView: View {
                 Section("Transaction") {
                     TextField("Amount", text: $amount)
                         .keyboardType(.decimalPad)
+                        .onChange(of: amount) { _, newValue in
+                            amount = AmountInputSanitizer.sanitize(newValue)
+                        }
                         .accessibilityIdentifier("quickAdd.amount")
                     TextField("Merchant", text: $merchant)
                         .accessibilityIdentifier("quickAdd.merchant")
