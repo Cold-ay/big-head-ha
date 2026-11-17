@@ -7,6 +7,16 @@ struct SpendingTotal: Identifiable, Equatable {
 }
 
 enum ConsumptionAnalytics {
+    static func records(from transactions: [TransactionRecord], cardID: UUID? = nil, month: Date, calendar: Calendar = .current, now: Date = Date()) -> [TransactionRecord] {
+        transactions.filter {
+            (cardID == nil || $0.cardID == cardID) && $0.date <= now && calendar.isDate($0.date, equalTo: month, toGranularity: .month)
+        }.sorted { $0.date > $1.date }
+    }
+
+    static func resolvedCardID(preferred: String, cards: [CreditCard]) -> UUID? {
+        cards.first { $0.id.uuidString == preferred && $0.isActive }?.id ?? cards.first { $0.isActive }?.id
+    }
+
     static func categoryTotals(from transactions: [TransactionRecord]) -> [SpendingTotal] {
         let totals = Dictionary(grouping: transactions, by: \.categoryName)
             .mapValues { records in

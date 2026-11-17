@@ -13,8 +13,12 @@ final class TransactionRecord {
     var originalCurrencyCode: String?
     var exchangeRateToHKD: Decimal?
     var note: String
+    var recurringDeductionID: UUID?
+    var recurringYearMonth: String?
+    var importSource: String?
+    var importReference: String?
 
-    init(date: Date, merchant: String, categoryName: String, cardID: UUID?, hkdAmount: Decimal, originalAmount: Decimal? = nil, originalCurrencyCode: String? = nil, exchangeRateToHKD: Decimal? = nil, note: String = "") {
+    init(date: Date, merchant: String, categoryName: String, cardID: UUID?, hkdAmount: Decimal, originalAmount: Decimal? = nil, originalCurrencyCode: String? = nil, exchangeRateToHKD: Decimal? = nil, note: String = "", recurringDeductionID: UUID? = nil, recurringYearMonth: String? = nil) {
         self.id = UUID()
         self.date = date
         self.merchant = merchant
@@ -25,5 +29,7 @@ final class TransactionRecord {
         self.originalCurrencyCode = originalCurrencyCode
         self.exchangeRateToHKD = exchangeRateToHKD
         self.note = note
+        self.recurringDeductionID = recurringDeductionID
+        self.recurringYearMonth = recurringYearMonth
     }
 }

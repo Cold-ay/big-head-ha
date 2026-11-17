@@ -3,3 +3,25 @@
 build/
 *.xcuserstate
 xcuserdata/
+.DS_Store
+DerivedData/
+*.xcresult/
+*.xcarchive/
+.env
+.env.*
+*.p12
+*.mobileprovision
+*.store
+*.store-shm
+*.store-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+backups/
+
+# Original issuer images remain local until redistribution rights are confirmed.
+CreditCardRecord/CardArt/*.png
+CreditCardRecord/CardArt/*.jpg
+CreditCardRecord/CardArt/*.download
+artifacts/card-art/
+artifacts/redesign/

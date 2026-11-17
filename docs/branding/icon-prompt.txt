@@ -1,0 +1,9 @@
+BigHeadHa App Icon
+Generator: built-in image_gen tool, opaque background, new image.
+Original generation: 1254 x 1254, RGB sRGB PNG.
+Production export: 1024 x 1024, RGB sRGB PNG; resized only for Xcode packaging.
+Source: docs/branding/BigHeadHaIcon-Master.png
+App asset: CreditCardRecord/Assets.xcassets/AppIcon.appiconset/AppIcon.png
+
+Final generation prompt:
+Use case: logo-brand. Asset type: production iOS app icon for BigHeadHa, an offline personal spending and credit-card tracker with a cute but professional mint-and-coral visual identity. Create ONE finished square icon, 1024 by 1024 pixels. Design an original memorable mark: one oversized friendly rounded smiling head subtly integrated with a payment card silhouette, combining the idea of Big Head and a neat personal wallet. Simple confident chunky geometry, two small dark eyes, a very small warm smile, one discreet coral card accent or card corner, warm-white main mark against a rich mint/teal solid background. Modern restrained editorial-quality 2D/softly tactile icon, crisp intentional edges and subtle restrained depth, not a shiny toy. Strong silhouette readable at 40 pixels, central mark occupying about 72 percent of the canvas, ample clean safe margins, balanced center composition. Full-bleed opaque background all the way to each square edge; iOS will apply its own corner mask, so DO NOT draw a rounded-square outer container, transparent corners, a border, an app mockup, a phone, or a drop shadow outside the icon. No text, no letters, no currency symbols, no brand logos, no extra objects, no animal characters, no decorative sparkles or blobs, no watermark. Output only the single finished square bitmap icon, not a presentation sheet.

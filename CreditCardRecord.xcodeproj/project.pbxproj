@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        AA0000000000000000000003 /* CardArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* CardArtwork.swift */; };
+        AA0000000000000000000005 /* CardArt in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000006 /* CardArt */; };
+        AA0000000000000000000007 /* WalletImportRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000008 /* WalletImportRecorder.swift */; };
+        AA0000000000000000000009 /* AppModelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000A /* AppModelStore.swift */; };
+        AA000000000000000000000B /* WalletImportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000C /* WalletImportTests.swift */; };
+        AA000000000000000000000D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000E /* Assets.xcassets */; };
+        AA0000000000000000000001 /* SpendingComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000002 /* SpendingComponents.swift */; };
 		111111111111111111111101 /* CreditCardRecordApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111201 /* CreditCardRecordApp.swift */; };
 		111111111111111111111102 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111202 /* ContentView.swift */; };
 		111111111111111111111103 /* CreditCardRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111203 /* CreditCardRecordTests.swift */; };
@@ -42,6 +49,9 @@
 		111111111111111111111133 /* AmountInputSanitizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111239 /* AmountInputSanitizerTests.swift */; };
 		111111111111111111111134 /* ConsumptionAnalyticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111240 /* ConsumptionAnalyticsTests.swift */; };
 		111111111111111111111135 /* HongKongCardCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111241 /* HongKongCardCatalogTests.swift */; };
+		111111111111111111111136 /* CardRemovalSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111242 /* CardRemovalSummary.swift */; };
+		111111111111111111111137 /* RecurringDeduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111243 /* RecurringDeduction.swift */; };
+		111111111111111111111138 /* RecurringDeductionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111111111111111111111244 /* RecurringDeductionGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +79,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+        AA0000000000000000000004 /* CardArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArtwork.swift; sourceTree = "<group>"; };
+        AA0000000000000000000006 /* CardArt */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CardArt; sourceTree = "<group>"; };
+        AA0000000000000000000008 /* WalletImportRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletImportRecorder.swift; sourceTree = "<group>"; };
+        AA000000000000000000000A /* AppModelStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelStore.swift; sourceTree = "<group>"; };
+        AA000000000000000000000C /* WalletImportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletImportTests.swift; sourceTree = "<group>"; };
+        AA000000000000000000000E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        AA0000000000000000000002 /* SpendingComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpendingComponents.swift; sourceTree = "<group>"; };
 		111111111111111111111201 /* CreditCardRecordApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRecordApp.swift; sourceTree = "<group>"; };
 		111111111111111111111202 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		111111111111111111111203 /* CreditCardRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRecordTests.swift; sourceTree = "<group>"; };
@@ -110,6 +127,9 @@
 		111111111111111111111239 /* AmountInputSanitizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountInputSanitizerTests.swift; sourceTree = "<group>"; };
 		111111111111111111111240 /* ConsumptionAnalyticsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumptionAnalyticsTests.swift; sourceTree = "<group>"; };
 		111111111111111111111241 /* HongKongCardCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HongKongCardCatalogTests.swift; sourceTree = "<group>"; };
+		111111111111111111111242 /* CardRemovalSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRemovalSummary.swift; sourceTree = "<group>"; };
+		111111111111111111111243 /* RecurringDeduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDeduction.swift; sourceTree = "<group>"; };
+		111111111111111111111244 /* RecurringDeductionGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecurringDeductionGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +180,10 @@
 			children = (
 				111111111111111111111201 /* CreditCardRecordApp.swift */,
 				111111111111111111111202 /* ContentView.swift */,
+                AA0000000000000000000002 /* SpendingComponents.swift */,
+                AA0000000000000000000004 /* CardArtwork.swift */,
+                AA0000000000000000000006 /* CardArt */,
+                AA000000000000000000000E /* Assets.xcassets */,
 				111111111111111111111230 /* CreditCardRecord.entitlements */,
 				111111111111111111111605 /* Core */,
 				111111111111111111111608 /* Features */,
@@ -172,6 +196,8 @@
 		111111111111111111111605 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+                AA0000000000000000000008 /* WalletImportRecorder.swift */,
+                AA000000000000000000000A /* AppModelStore.swift */,
 				111111111111111111111206 /* AppConstants.swift */,
 				111111111111111111111214 /* CurrencyConverter.swift */,
 				111111111111111111111216 /* StatementCyclePredictor.swift */,
@@ -181,6 +207,8 @@
 				111111111111111111111234 /* AmountInputSanitizer.swift */,
 				111111111111111111111235 /* ConsumptionAnalytics.swift */,
 				111111111111111111111236 /* HongKongCardCatalog.swift */,
+				111111111111111111111242 /* CardRemovalSummary.swift */,
+				111111111111111111111244 /* RecurringDeductionGenerator.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -193,6 +221,7 @@
 				111111111111111111111210 /* StatementCycle.swift */,
 				111111111111111111111211 /* Transaction.swift */,
 				111111111111111111111212 /* SpendingCategory.swift */,
+				111111111111111111111243 /* RecurringDeduction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,6 +239,7 @@
 				111111111111111111111239 /* AmountInputSanitizerTests.swift */,
 				111111111111111111111240 /* ConsumptionAnalyticsTests.swift */,
 				111111111111111111111241 /* HongKongCardCatalogTests.swift */,
+                AA000000000000000000000C /* WalletImportTests.swift */,
 			);
 			path = CreditCardRecordTests;
 			sourceTree = "<group>";
@@ -424,6 +454,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+                AA0000000000000000000005 /* CardArt in Resources */,
+                AA000000000000000000000D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +503,10 @@
 			files = (
 				111111111111111111111101 /* CreditCardRecordApp.swift in Sources */,
 				111111111111111111111102 /* ContentView.swift in Sources */,
+                AA0000000000000000000001 /* SpendingComponents.swift in Sources */,
+                AA0000000000000000000003 /* CardArtwork.swift in Sources */,
+                AA0000000000000000000007 /* WalletImportRecorder.swift in Sources */,
+                AA0000000000000000000009 /* AppModelStore.swift in Sources */,
 				111111111111111111111104 /* AppConstants.swift in Sources */,
 				111111111111111111111105 /* BootstrapModel.swift in Sources */,
 				111111111111111111111107 /* CreditCard.swift in Sources */,
@@ -490,6 +526,9 @@
 				111111111111111111111130 /* HongKongCardCatalog.swift in Sources */,
 				111111111111111111111131 /* ChartsView.swift in Sources */,
 				111111111111111111111132 /* CardsView.swift in Sources */,
+				111111111111111111111136 /* CardRemovalSummary.swift in Sources */,
+				111111111111111111111137 /* RecurringDeduction.swift in Sources */,
+				111111111111111111111138 /* RecurringDeductionGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +546,7 @@
 				111111111111111111111133 /* AmountInputSanitizerTests.swift in Sources */,
 				111111111111111111111134 /* ConsumptionAnalyticsTests.swift in Sources */,
 				111111111111111111111135 /* HongKongCardCatalogTests.swift in Sources */,
+                AA000000000000000000000B /* WalletImportTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,6 +708,7 @@
 		111111111111111111112003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CreditCardRecord/CreditCardRecord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -676,7 +717,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Credit Card Record";
+				INFOPLIST_KEY_CFBundleDisplayName = BigHeadHa;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -696,6 +737,7 @@
 		111111111111111111112004 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CreditCardRecord/CreditCardRecord.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,7 +746,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Credit Card Record";
+				INFOPLIST_KEY_CFBundleDisplayName = BigHeadHa;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -824,7 +866,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CreditCardRecordWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CreditCardRecordWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = BigHeadHa;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -851,7 +893,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CreditCardRecordWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = CreditCardRecordWidget;
+				INFOPLIST_KEY_CFBundleDisplayName = BigHeadHa;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

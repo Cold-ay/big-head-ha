@@ -44,7 +44,7 @@ struct CreditCardRecordWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             CreditCardRecordWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Next Payment Due")
+        .configurationDisplayName("BigHeadHa: Next Payment")
         .description("Shows the next credit card payment countdown.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }

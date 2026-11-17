@@ -1,75 +1,43 @@
-import Charts
-import SwiftData
 import SwiftUI
+import Charts
 
 struct ChartsView: View {
-    @Query(sort: \TransactionRecord.date, order: .reverse) private var transactions: [TransactionRecord]
-
-    private var categoryTotals: [SpendingTotal] {
-        ConsumptionAnalytics.categoryTotals(from: transactions)
-    }
-
-    private var monthlyTotals: [SpendingTotal] {
-        ConsumptionAnalytics.monthlyTotals(from: transactions)
+    @Environment(\.appStrings) private var strings
+    @AppStorage("hideAmounts") private var hideAmounts = false
+    let transactions: [TransactionRecord]
+    let month: Date
+    private var series: [SpendingTotal] {
+        let calendar = Calendar.current
+        let anchor = calendar.date(from: calendar.dateComponents([.year, .month], from: month)) ?? month
+        return (-5...0).map { offset in
+            let date = calendar.date(byAdding: .month, value: offset, to: anchor) ?? anchor
+            let total = ConsumptionAnalytics.records(from: transactions, month: date).reduce(Decimal(0)) { $0 + $1.hkdAmount }
+            return SpendingTotal(id: "\(offset)", label: strings.dateString(date, format: "MMM"), amount: total)
+        }
     }
 
     var body: some View {
-        NavigationStack {
-            List {
-                if transactions.isEmpty {
-                    ContentUnavailableView("No spending yet", systemImage: "chart.pie", description: Text("Quick records will appear here as category and time charts."))
-                } else {
-                    Section("By Category") {
-                        Chart(categoryTotals) { total in
-                            BarMark(
-                                x: .value("Amount", total.amount.doubleValue),
-                                y: .value("Category", total.label)
-                            )
-                        }
-                        .frame(height: max(220, CGFloat(categoryTotals.count) * 36))
-                    }
-
-                    Section("By Month") {
-                        Chart(monthlyTotals) { total in
-                            LineMark(
-                                x: .value("Month", total.label),
-                                y: .value("Amount", total.amount.doubleValue)
-                            )
-                            PointMark(
-                                x: .value("Month", total.label),
-                                y: .value("Amount", total.amount.doubleValue)
-                            )
-                        }
-                        .frame(height: 240)
-                    }
-
-                    Section("Habit Summary") {
-                        if let largestCategory = categoryTotals.first {
-                            LabeledContent("Top category", value: largestCategory.label)
-                            LabeledContent("Top category spend", value: CurrencyFormatter.hkdString(from: largestCategory.amount))
-                        }
-                        LabeledContent("Recorded transactions", value: "\(transactions.count)")
-                    }
-                }
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Text(strings.monthlyTrend).font(.system(size: 19, weight: .bold, design: .rounded))
+                Spacer()
+                Text("HKD").font(.caption).foregroundStyle(DashboardStyle.secondaryText)
             }
-            .navigationTitle("Charts")
+            if hideAmounts {
+                Image(systemName: "eye.slash").font(.title2).frame(maxWidth: .infinity, minHeight: 150).foregroundStyle(DashboardStyle.secondaryText)
+            } else if series.allSatisfy({ $0.amount == 0 }) {
+                EmptySpendingState()
+            } else {
+                Chart(series) { item in
+                    BarMark(x: .value("Month", item.label), y: .value("HKD", NSDecimalNumber(decimal: item.amount).doubleValue), width: .ratio(0.55))
+                        .foregroundStyle(item.id == "0" ? DashboardStyle.secondary : DashboardStyle.primary.opacity(0.55))
+                        .cornerRadius(5)
+                }
+                .chartXAxis { AxisMarks { _ in AxisValueLabel().font(.system(size: 11, weight: .medium)) } }
+                .chartYAxis { AxisMarks(position: .leading) }
+                .frame(height: 156)
+                .accessibilityIdentifier("overview.trend")
+            }
         }
-    }
-}
-
-private extension Decimal {
-    var doubleValue: Double {
-        NSDecimalNumber(decimal: self).doubleValue
-    }
-}
-
-private enum CurrencyFormatter {
-    static func hkdString(from amount: Decimal) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "HKD"
-        formatter.currencySymbol = "HK$"
-        formatter.locale = Locale(identifier: "en_HK")
-        return formatter.string(from: NSDecimalNumber(decimal: amount)) ?? "HK$0.00"
     }
 }

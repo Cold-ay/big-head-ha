@@ -3,14 +3,30 @@ import SwiftUI
 
 @main
 struct CreditCardRecordApp: App {
-    private var isUITesting: Bool {
-        ProcessInfo.processInfo.arguments.contains("--uitesting")
+    private let preferences: UserDefaults
+    private let container: ModelContainer
+
+    init() {
+        if ProcessInfo.processInfo.arguments.contains("--uitesting") {
+            let suite = "CreditCardRecord.UITests"
+            let defaults = UserDefaults(suiteName: suite)!
+            defaults.removePersistentDomain(forName: suite)
+            preferences = defaults
+        } else {
+            preferences = .standard
+        }
+        do {
+            container = try AppModelStore.shared.get()
+        } catch {
+            fatalError("Unable to open the local record store: \(error)")
+        }
     }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .defaultAppStorage(preferences)
         }
-        .modelContainer(for: [CreditCard.self, TransactionRecord.self, StatementCycle.self, SpendingCategory.self], inMemory: isUITesting)
+        .modelContainer(container)
     }
 }

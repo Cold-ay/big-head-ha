@@ -2,6 +2,33 @@ import XCTest
 @testable import CreditCardRecord
 
 final class StatementCyclePredictorTests: XCTestCase {
+    func testUpcomingDueIncludesPreviousMonthsStatement() {
+        let calendar = Calendar(identifier: .gregorian)
+        let card = CreditCard(bankName: "HSBC", displayName: "Red", last4: "1234", statementDay: 15,
+                              dueRuleKind: .daysAfterStatement, dueDayOrOffset: 25)
+        let cycle = StatementCyclePredictor.upcomingCycle(for: card, today: date(year: 2026, month: 11, day: 17, calendar: calendar), calendar: calendar)
+        XCTAssertEqual(cycle.statementDate, date(year: 2026, month: 11, day: 15, calendar: calendar))
+        XCTAssertEqual(cycle.dueDate, date(year: 2026, month: 12, day: 10, calendar: calendar))
+        let earlier = StatementCyclePredictor.upcomingCycle(for: card, today: date(year: 2026, month: 11, day: 2, calendar: calendar), calendar: calendar)
+        XCTAssertEqual(earlier.dueDate, date(year: 2026, month: 11, day: 9, calendar: calendar))
+    }
+
+    func testManualDueDateAndPaidStatusAreRespected() {
+        let calendar = Calendar(identifier: .gregorian)
+        let card = CreditCard(bankName: "Bank", displayName: "Card", last4: "1234", statementDay: 15,
+                              dueRuleKind: .daysAfterStatement, dueDayOrOffset: 25)
+        let recorded = StatementCycle(cardID: card.id,
+                                      startDate: date(year: 2026, month: 10, day: 16, calendar: calendar),
+                                      endDate: date(year: 2026, month: 11, day: 15, calendar: calendar),
+                                      statementDate: date(year: 2026, month: 11, day: 15, calendar: calendar),
+                                      dueDate: date(year: 2026, month: 12, day: 12, calendar: calendar), isManualDate: true)
+        let today = date(year: 2026, month: 11, day: 17, calendar: calendar)
+        XCTAssertEqual(StatementCyclePredictor.upcomingCycle(for: card, cycles: [recorded], today: today, calendar: calendar).dueDate, recorded.dueDate)
+        recorded.isPaid = true
+        XCTAssertEqual(StatementCyclePredictor.upcomingCycle(for: card, cycles: [recorded], today: today, calendar: calendar).statementDate,
+                       date(year: 2026, month: 12, day: 15, calendar: calendar))
+    }
+
     func testPredictsFixedDueDayNextMonth() throws {
         let calendar = Calendar(identifier: .gregorian)
         let firstStatement = calendar.date(from: DateComponents(year: 2026, month: 6, day: 12))!

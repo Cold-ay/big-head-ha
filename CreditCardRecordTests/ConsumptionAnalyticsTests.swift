@@ -2,6 +2,33 @@ import XCTest
 @testable import CreditCardRecord
 
 final class ConsumptionAnalyticsTests: XCTestCase {
+    func testMonthAndCardSelectionExcludeOtherCardsAndFutureSpending() {
+        let calendar = Calendar(identifier: .gregorian)
+        let month = calendar.date(from: DateComponents(year: 2026, month: 11, day: 18))!
+        let card = UUID()
+        let records = [
+            TransactionRecord(date: month, merchant: "Lunch", categoryName: "dining", cardID: card, hkdAmount: 80),
+            TransactionRecord(date: month, merchant: "Train", categoryName: "transport", cardID: UUID(), hkdAmount: 20),
+            TransactionRecord(date: calendar.date(byAdding: .day, value: 1, to: month)!, merchant: "Future", categoryName: "other", cardID: card, hkdAmount: 999)
+        ]
+        XCTAssertEqual(ConsumptionAnalytics.records(from: records, month: month, calendar: calendar, now: month).count, 2)
+        XCTAssertEqual(ConsumptionAnalytics.records(from: records, cardID: card, month: month, calendar: calendar, now: month).map(\.merchant), ["Lunch"])
+    }
+
+    func testDefaultCardFallsBackWhenRemovedOrInactive() {
+        let card = CreditCard(bankName: "Bank", displayName: "First", last4: "1234", statementDay: 15, dueRuleKind: .daysAfterStatement, dueDayOrOffset: 25)
+        XCTAssertEqual(ConsumptionAnalytics.resolvedCardID(preferred: UUID().uuidString, cards: [card]), card.id)
+        card.isActive = false
+        XCTAssertNil(ConsumptionAnalytics.resolvedCardID(preferred: card.id.uuidString, cards: [card]))
+    }
+
+    func testEveryCategoryHasUniqueIconAndFourTabsHaveDistinctRoles() {
+        XCTAssertEqual(SpendingCategoryOption.allCases.count, 11)
+        XCTAssertEqual(Set(SpendingCategoryOption.allCases.map(\.symbolName)).count, 11)
+        XCTAssertEqual(SpendingCategoryOption.resolve("unknown"), .other)
+        XCTAssertEqual(AppTab.allCases.map(\.rawValue), ["overview", "quickAdd", "cards", "repayment"])
+    }
+
     func testCategoryTotalsSortByHighestSpend() {
         let records = [
             TransactionRecord(date: Date(timeIntervalSince1970: 0), merchant: "Cafe", categoryName: "dining", cardID: nil, hkdAmount: Decimal(88)),
